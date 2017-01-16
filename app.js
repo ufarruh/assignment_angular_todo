@@ -32,8 +32,6 @@ app.controller("ToDoCtrl", ["$scope", function ($scope) {
   };
 
   $scope.completeToDo = function (item){
-    var sitem = $scope.removeToDo(item);
-    console.log(sitem)
     $scope.completeToDos.push(item);
   };
 

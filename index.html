@@ -28,9 +28,10 @@
       <tr ng-repeat="item in items" >
         <td> {{ item.text }} </td>
         <td>{{ item.dueDate.getDate() + " " + " " + item.dueDate.getMonth() +" " +item.dueDate.getFullYear() }}</td>
-        <td><input type="checkbox" name="checkbox" ng-model="complete" ng-click="completeToDo(item)" ></td>
+        <td><input type="checkbox" name="checkbox" ng-model="complete"  ></td>
         <td><a href="#" ng-click="removeToDo(item)">X</a></td>
       </tr>
+      <hr>
     </table>
 
 
