@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>ToDo</title>
+    <link rel="stylesheet" href="main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="app.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body ng-controller="ToDoCtrl" >
 
@@ -17,24 +17,24 @@
       <button type="button" name="button" ng-click="addTodo()">Add</button>
 
     </form>
+    <br />
+    <hr />
 
     <table>
       <tr>
+        <th>Completed</th>
         <th>Text</th>
         <th>Due Date</th>
-        <th>Completed</th>
-        <th>X</th>
+        <td>Delete</td>
       </tr>
-      <tr ng-repeat="item in items" >
-        <td> {{ item.text }} </td>
-        <td>{{ item.dueDate.getDate() + " " + " " + item.dueDate.getMonth() +" " +item.dueDate.getFullYear() }}</td>
-        <td><input type="checkbox" name="checkbox" ng-model="complete"  ></td>
-        <td><a href="#" ng-click="removeToDo(item)">X</a></td>
+      <tr ng-repeat="item in items" index="{{ $index }}"  item="item" delete="delete()" complete="complete()" todo-item>
       </tr>
-      <hr>
     </table>
 
 
+    <script src="javascript/app.js" charset="utf-8"></script>
+    <script type="text/javascript" src="javascript/directives/todoItem.js"></script>
+    <script type="text/javascript" src="javascript/services/ToDoService.js"></script>
 
   </body>
 </html>
